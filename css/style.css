@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Kanit', sans-serif;
+}
+
+.screen-container {
+    width: 100%;
+    height: 100vh;
+}
+
+#app {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.input-container {
+    margin: 10px 0;
+    border: 1px solid gray;
+    height: 50px;
+    padding: 0 13px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.input-container>i {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.input-container>i:hover{
+    opacity: 0.2;
+}
+
+.input-container>input {
+    width: calc(100% - 50px);
+    font-size: 1.3em;
+    border-style: none;
+    outline: 0;
+}
