@@ -23,9 +23,13 @@
                 </header>
                 <main>
                     <ul>
-                        <li v-for="(task,index) in tasks">
-                            <span @click="reverseDone(index)" :class="(task.done) ? 'task-done' : ''">{{ task.taskName }}</span>
-                            <i class="far fa-times-circle" @click="removeTask(index)"></i>
+                        <li v-for="(task,index) in tasks" class="task-container" :class="'color-' + task.color">
+                            <span class="text-container" @click="reverseDone(index)">
+                                <i class="fas fa-check" v-show="task.done"></i>
+                                <i class="fas fa-times" v-show="!task.done"></i>
+                                <span :class="(task.done) ? 'task-done' : ''">{{ task.taskName }}</span>
+                            </span>
+                            <i class="far fa-times-circle remove-task" @click="removeTask(index)"></i>
                         </li>
                     </ul>
                 </main>

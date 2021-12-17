@@ -1,3 +1,15 @@
+:root {
+    --blue: #5daaba;
+    --light-blue: #89d4e4;
+    --white: #ffffff;
+    --pink: #fdecd7;
+    --light-green: #abf8b2;
+    --yellow: #ededa8;
+    --purple: #dcb1f9;
+    --red: #d90429;
+    --green: #73a580;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,14 +21,22 @@ html {
     font-family: 'Kanit', sans-serif;
 }
 
+body {
+    background-color: var(--blue);
+}
+
 .screen-container {
     width: 100%;
     height: 100vh;
+    overflow: auto;
 }
 
 #app {
     width: 80%;
     margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--white);
 }
 
 .input-container {
@@ -30,20 +50,82 @@ html {
     align-items: center;   
 }
 
+.input-container:focus-within {
+    border: 3px solid var(--blue);
+}
+
 .input-container>i {
     font-size: 2em;
     cursor: pointer;
 }
 
 .input-container>i:hover{
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .input-container>input {
     width: calc(100% - 50px);
-    font-size: 1.3em;
+    margin-left: 10px;
+    font-size: 1.2em;
     border-style: none;
     outline: 0;
+}
+
+.task-container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.task-container.color-0 {
+    background-image: linear-gradient(to right, var(--white) , var(--light-green));
+}
+
+.task-container.color-1 {
+    background-image: linear-gradient(to right, var(--white) , var(--light-blue));
+}
+
+.task-container.color-2 {
+    background-image: linear-gradient(to right, var(--white) , var(--pink));
+}
+
+.task-container.color-3 {
+    background-image: linear-gradient(to right, var(--white) , var(--purple));
+}
+
+.task-container.color-4 {
+    background-image: linear-gradient(to right, var(--white) , var(--yellow));
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    max-width: 70%;
+    overflow: hidden;
+}
+
+.text-container i{
+    margin-right: 10px;
+    color: var(--green);
+}
+
+.text-container i.fa-times{
+    color: var(--red);
+}
+
+.remove-task {
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.remove-task:hover {
+    opacity: 1;
 }
 
 .task-done {
